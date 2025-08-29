@@ -23,7 +23,12 @@
 hs_err_pid*
 replay_pid*
 
+<<<<<<< HEAD
 pma252.*/
 volume/
 .vscode/
+=======
+/api/
+volume/
+>>>>>>> refs/remotes/origin/main
 .DS_Store
