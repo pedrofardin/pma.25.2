@@ -4,6 +4,7 @@ services:
 
   db:
     image: postgres:17.6
+    hostname: db
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
@@ -17,5 +18,12 @@ services:
     build:
       context: ./pma252.account-service
       dockerfile: Dockerfile
+    hostname: account
+    environment:
+      DATABASE_URL: jdbc:postgresql://db:5432/${POSTGRES_DB}
+      DATABASE_USERNAME: ${POSTGRES_USER}
+      DATABASE_PASSWORD: ${POSTGRES_PASSWORD}
+    depends_on:
+      - db
     ports:
       - 8080:8080
