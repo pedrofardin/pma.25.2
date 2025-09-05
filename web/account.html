@@ -13,7 +13,7 @@
                     headers: {
                         "Content-Type": "application/json",
                     },
-                    body: payload
+                    body: JSON.stringify(payload)
                 });
                 return false;
             };
@@ -32,7 +32,7 @@
             <input type="text" id="accountEmail" name="accountEmail" value="1berto@example.com"><br>
 
             <label for="accountPassword">Password:</label>
-            <input type="password" id="accountPassword" name="accountPassword" value="123"><br>
+            <input type="password" id="accountPassword" name="accountPassword" value="123678"><br>
 
             <button type="button" onclick="save();">Submit</button>
         </form>
