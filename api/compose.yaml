@@ -23,7 +23,15 @@ services:
       DATABASE_URL: jdbc:postgresql://db:5432/${POSTGRES_DB}
       DATABASE_USERNAME: ${POSTGRES_USER}
       DATABASE_PASSWORD: ${POSTGRES_PASSWORD}
+    restart: always
+    deploy:
+      replicas: 3
     depends_on:
       - db
+
+  gateway:
+    build:
+      context: ./pma252.gateway-service
+      dockerfile: Dockerfile
     ports:
       - 8080:8080
