@@ -25,7 +25,7 @@ services:
       DATABASE_PASSWORD: ${POSTGRES_PASSWORD}
     restart: always
     deploy:
-      replicas: 3
+      replicas: 1
     depends_on:
       - db
 
