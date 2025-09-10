@@ -2,10 +2,7 @@
     <head>
         <script src="library.js"></script>
         <script>
-            window.onload = () => {
-                loadUserInfo();
-                getAccounts();
-            };
+            window.onload = loadUserInfo;
         </script>
     </head>
     <body>
@@ -18,13 +15,10 @@
         <a href="javascript:logout()">Logout</a> |
         <hr>
 
-        <h1>Account Service</h1>
-        <p>This is the account service.</p>
+        <h1>Login User</h1>
+        <p>This is the login service.</p>
 
-        <form action="http://localhost:8080/account" method="post">
-
-            <label for="accountName">Name:</label>
-            <input type="text" id="accountName" name="accountName" value="1berto"><br>
+        <form method="post">
 
             <label for="accountEmail">Email:</label>
             <input type="text" id="accountEmail" name="accountEmail" value="1berto@example.com"><br>
@@ -32,11 +26,7 @@
             <label for="accountPassword">Password:</label>
             <input type="password" id="accountPassword" name="accountPassword" value="123678"><br>
 
-            <button type="button" onclick="save();">Submit</button>
+            <button type="button" onclick="javascript:login();">Submit</button>
         </form>
-        <hr>
-        <div id="account-list">
-
-        </div>
     </body>
 </html>
