@@ -114,6 +114,7 @@ const saveAccount = () => {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
+            ... (localStorage.getItem("token") && { "Authorization": `Bearer ${localStorage.getItem("token")}` })
         },
         body: JSON.stringify(payload)
     });
@@ -125,6 +126,7 @@ const getAccounts = () => {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
+            ... (localStorage.getItem("token") && { "Authorization": `Bearer ${localStorage.getItem("token")}` })
         }
     }).then(response => {
         if (!response.ok) {
