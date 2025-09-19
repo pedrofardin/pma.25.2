@@ -146,3 +146,25 @@ const getAccounts = () => {
         console.error("Error:", error);
     });
 };
+
+const getSettings = () => {
+    fetch(`${URI}/account/whoami`, {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            ... (localStorage.getItem("token") && { "Authorization": `Bearer ${localStorage.getItem("token")}` })
+        }
+    }).then(response => {
+        if (!response.ok) {
+            throw new Error("Network response was not ok");
+        }
+        return response.json();
+    }).then(data => {
+        console.log("Success:", data);
+        document.getElementById("accountId").value = data.id;
+        document.getElementById("accountName").value = data.name;
+        document.getElementById("accountEmail").value = data.email;
+    }).catch((error) => {
+        console.error("Error:", error);
+    });
+};
