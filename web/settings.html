@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <script src="library.js"></script>
+        <script>
+            window.onload = () => {
+                loadUserInfo();
+                getSettings();
+            };
+        </script>
+    </head>
+    <body>
+        <div id="user-name"></div>
+        <div id="user-email"></div>
+        <hr>
+        <a href="login.html">Login</a> |
+        <a href="register.html">Register</a> |
+        <a href="account.html">Account</a> |
+        <a href="settings.html">Settings</a> |
+        <a href="javascript:logout()">Logout</a> |
+        <hr>
+
+        <h1>Settings Service</h1>
+        <p>This is the settings service.</p>
+
+        <form action="http://localhost:8080/account" method="post">
+
+            <label for="accountId">Id:</label>
+            <input type="text" id="accountId" name="accountId" value=""><br>
+
+            <hr>
+
+            <label for="accountName">Name:</label>
+            <input type="text" id="accountName" name="accountName" value=""><br>
+
+            <label for="accountEmail">Email:</label>
+            <input type="text" id="accountEmail" name="accountEmail" value=""><br>
+
+        </form>
+        <hr>
+    </body>
+</html>
