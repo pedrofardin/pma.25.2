@@ -59,6 +59,15 @@ services:
     depends_on:
       - db
 
+  exchange:
+    build:
+      context: ./pma252.exchange-service
+      dockerfile: Dockerfile
+    hostname: exchange
+    restart: always
+    deploy:
+      replicas: 1
+
   auth:
     build:
       context: ./pma252.auth-service
